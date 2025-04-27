@@ -1,4 +1,3 @@
-
 function HomeDate() {
     const today = new Date();
     const dayName = today.toLocaleDateString('en-US', { weekday: 'long' });
@@ -6,11 +5,14 @@ function HomeDate() {
     const dayNumber = today.getDate();
     const year = today.getFullYear();
     return (
-        <div className="p-4 inline-flex flex-col items-center">
+        <section className="p-4 inline-flex flex-col items-center" aria-label="Today's Date">
             <div className="self-end text-right text-zinc-300 font-light">
                 <p>{dayName}</p>
-                <p>{monthName} {dayNumber}, {year}</p></div>
-        </div>
+                <time dateTime={`${year}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(dayNumber).padStart(2, "0")}`}>
+                    {monthName} {dayNumber}, {year}
+                </time>
+            </div>
+        </section>
     )
 }
 

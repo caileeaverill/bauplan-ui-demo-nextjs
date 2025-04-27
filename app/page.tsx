@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { sleep } from "@/lib/sleep";
 import { useAppSettings } from "@/context/AppSettingsContext";
-import Loading from "./loading"; // ← ADD THIS LINE
-import HomeDate from "@/components/home/HomeDate";
-import HomeMetrics from "@/components/home/HomeMetrics";
-import PerformanceOverview from "@/components/home/PerformanceOverview";
-import RecentActivity from "@/components/home/RecentActivity";
-import UserWelcome from "@/components/home/UserWelcome";
+import HomeDate from "../components/home/HomeDate";
+import HomeMetrics from "../components/home/HomeMetrics";
+import PerformanceOverview from "../components/home/PerformanceOverview";
+import RecentActivity from "../components/home/RecentActivity";
+import UserWelcome from "../components/home/UserWelcome";
+import Loading from "./loading";
+
 
 export default function Page() {
   const { loadingTime } = useAppSettings();
@@ -24,7 +25,9 @@ export default function Page() {
   }, [loadingTime]);
 
   if (isLoading) {
-    return <Loading />; // ← SHOW YOUR BOUNCING LOGO WHILE LOADING
+    return (
+      <Loading />
+    );
   }
 
   return (

@@ -22,12 +22,12 @@ function RecentActivity() {
     }, []);
 
     return (
-        <div className="rounded-md p-4">
+        <section className="rounded-md p-4" aria-label="Recent Activity">
             <h2 className="text-3xl font-bold mb-2">Recent Activity</h2>
-            <ScrollArea className="h-[400px] rounded-md p-4">
-                {activities.map((activity, idx) => (
-                    <ul key={idx}>
-                        <li className="flex items-center justify-between border-b border-slate-800 pb-3 first:pt-2 last:border-none">
+            <ScrollArea className="h-[400px] rounded-md">
+                <ul>
+                    {activities.map((activity, idx) => (
+                        <li key={idx} className="flex items-center my-2 justify-between border-b border-slate-800 pb-3 first:pt-2 last:border-none">
                             <div className="flex gap-4 items-center text-sm text-zinc-300">
                                 <Avatar>
                                     <AvatarImage src={activity.avatar} />
@@ -44,19 +44,19 @@ function RecentActivity() {
                                     <span className="text-slate-400">{activity.action}</span>
                                 </div>
                             </div>
-                            <div className="min-w-[50px] text-right">
+                            <div className="min-w-[75px] text-right">
                                 <span className="text-xs text-zinc-300 font-light">{activity.time}</span>
                             </div>
                         </li>
-                    </ul>
-                ))}
+                    ))}
+                </ul>
                 {showChevron && (
                     <div className="pointer-events-none absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-px h-4 bg-slate-800 animate-bounce">
                         <LucideChevronDown size={20} />
                     </div>
                 )}
             </ScrollArea>
-        </div>
+        </section>
     )
 }
 

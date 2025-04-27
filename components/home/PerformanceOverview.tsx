@@ -39,9 +39,9 @@ const chartConfig = {
 
 export default function PerformanceOverview() {
     return (
-        <Card className="bg-transparent text-white border-none shadow-none [&>*]:p-0 ]">
+        <Card className="bg-transparent text-white border-none shadow-none py-4 [&>*]:p-0 ]">
             <CardHeader>
-                <CardTitle>Performance Overview</CardTitle>
+                <CardTitle className="text-3xl font-bold">Performance Overview</CardTitle>
                 <CardDescription className="text-zinc-300">API Calls and Pipeline Executions - Jan to Jun 2024</CardDescription>
             </CardHeader >
             <CardContent >

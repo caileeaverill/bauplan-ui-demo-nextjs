@@ -42,12 +42,12 @@ export function Metrics({
     const cardContent = (
         <>
             <CardHeader className="space-y-2">
-                <div className={`absolute top-4 right-4 ${className}`}>
+                <div className={`absolute top-4 right-4 ${className}`} aria-hidden="true">
                     {icon}
                 </div>
-                <span className="uppercase text-xs font-normal tracking-wide text-zinc-300">
+                <h3 className="uppercase text-xs font-normal tracking-wide text-zinc-300">
                     {label}
-                </span>
+                </h3>
                 <CardTitle className={`text-2xl font-bold transform transition-all duration-600 ${loaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
                     {value ?? 0}
                 </CardTitle>
@@ -58,7 +58,7 @@ export function Metrics({
                 )}
                 {link && buttonText && (
                     <Link href={link}>
-                        <Button className="w-full transition-all duration-300  bg-transparent border border-zinc-300 text-zinc-300 hover:bg-white hover:cursor-pointer hover:text-slate-800">
+                        <Button className="w-full transition-all duration-300 bg-transparent border border-zinc-300 text-zinc-300 hover:bg-white hover:cursor-pointer hover:text-slate-800">
                             {buttonText}
                         </Button>
                     </Link>

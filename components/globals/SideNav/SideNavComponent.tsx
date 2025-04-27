@@ -16,7 +16,7 @@ export default function SideNav() {
         <aside className={`h-screen ${collapsed ? "w-28" : "w-64"} border-r border-slate-800 flex flex-col justify-between p-8 transition-all duration-700 bg-gradient-to-br from-zinc-900 to-slate-800`}>
             {/* Top - Logo */}
             <div>
-                <div className="relative mb-4 flex items-center justify-between">
+                <header className="relative mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <a
                             href="https://www.bauplanlabs.com/"
@@ -47,10 +47,10 @@ export default function SideNav() {
                             {collapsed ? <ChevronRight /> : <ChevronLeft />}
                         </span>
                     </Button>
-                </div>
+                </header>
 
                 {/* Main Links */}
-                <nav className="flex flex-col gap-2">
+                <nav className="flex flex-col gap-2" aria-label="Main Navigation">
                     <SideNavLink to="/" icon={<Home />} label="Home" collapsed={collapsed} />
                     <SideNavLink to="/dashboard" icon={<LucideBarChart3 />} label="Dashboard" collapsed={collapsed} />
                     <SideNavLink to="/pipelines" icon={<LucideWrench />} label="Pipelines" collapsed={collapsed} />

@@ -16,7 +16,11 @@ function Loading() {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-full animate-fade-in">
+        <main
+            className="flex flex-col items-center justify-center w-full h-full animate-fade-in"
+            aria-busy="true"
+            aria-live="polite"
+        >
             <Image
                 src="/bauplan-logo.svg"
                 alt="Loading logo"
@@ -27,7 +31,7 @@ function Loading() {
             <p className="text-slate-400 text-sm animate-fade-delayed mb-4">
                 {messages[currentMessage]}
             </p>
-        </div>
+        </main>
     );
 }
 

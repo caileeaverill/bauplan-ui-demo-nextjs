@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-zinc-900 to-slate-800`}>
         <AppSettingsProvider>
-          <div className="flex h-screen">
+          <div className="flex w-full h-screen">
             <SideNav />
             <div className="flex flex-1 flex-col overflow-auto">
               <TopNav />

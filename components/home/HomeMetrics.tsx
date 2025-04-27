@@ -23,7 +23,7 @@ function HomeMetrics() {
     };
 
     return (
-        <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+        <section className="grid gap-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1" aria-label="System Metrics">
             <Metrics
                 icon={<LucideRocket />}
                 label="Deployments"
@@ -52,7 +52,7 @@ function HomeMetrics() {
                 subtext={`${metricsData.creditsRemaining} remaining`}
                 className="text-green-500"
             />
-        </div>
+        </section>
     )
 }
 
