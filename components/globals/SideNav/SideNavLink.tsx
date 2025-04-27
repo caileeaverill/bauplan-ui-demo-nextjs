@@ -17,9 +17,9 @@ export default function SideNavLink({ to, icon, label, collapsed }: SideNavLinkP
         <Link
             href={to}
             aria-current={isActive ? "page" : undefined}
-            className={`group flex items-center w-full gap-2 rounded-md px-4 py-2 text-sm transition-all duration-400 ${isActive
-                ? "bg-blue-500/10 text-blue-400"
-                : "text-zinc-300 hover:bg-blue-500/10 hover:text-blue-400 border-transparent"
+            className={`group flex items-center font-semibold w-full gap-2 rounded-md px-4 py-2 text-sm transition-all duration-400 ${isActive
+                ? "bg-blue-500/10 text-white dark:text-blue-400 "
+                : "text-white dark:text-zinc-300 hover:bg-blue-500/10 dark:hover:text-blue-400 border-transparent"
                 }`}
         >
             <span className="[&>svg]:w-4 [&>svg]:h-4">

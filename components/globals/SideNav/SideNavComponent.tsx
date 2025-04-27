@@ -13,7 +13,7 @@ export default function SideNav() {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <aside className={`h-screen ${collapsed ? "w-28" : "w-64"} border-r border-slate-800 flex flex-col justify-between p-8 transition-all duration-700 bg-gradient-to-br from-zinc-900 to-slate-800`}>
+        <aside className={`h-screen ${collapsed ? "w-28" : "w-64"} flex flex-col justify-between p-8 transition-all duration-700 bg-gradient-to-br from-red-600 to-red-700 light:from-red-500 light:to-red-600 dark:from-zinc-900 dark:to-slate-800 dark:bg-gradient-to-br`}>
             {/* Top - Logo */}
             <div>
                 <header className="relative mb-4 flex items-center justify-between">
@@ -31,7 +31,7 @@ export default function SideNav() {
                                 height={32}
                                 className="transition-transform duration-700 group-hover:rotate-[360deg]"
                             />
-                            <span className={`text-white transition-opacity duration-600 ${collapsed ? "opacity-0" : "opacity-100"}`}>
+                            <span className={`text-white transition-opacity duration-600 font-semibold ${collapsed ? "opacity-0" : "opacity-100"}`}>
                                 bauplan
                             </span>
                         </a>
@@ -58,7 +58,7 @@ export default function SideNav() {
                     <SideNavLink to="/data-products" icon={<LucideLayers />} label="Data Products" collapsed={collapsed} />
 
                     {/* Divider */}
-                    <Separator className="my-4 bg-slate-800" />
+                    <Separator className="my-4 bg-white/20 dark:bg-slate-800" />
 
                     {/* Connections Links */}
                     <SideNavLink to="/integrations" icon={<LucidePlug />} label="Integrations" collapsed={collapsed} />

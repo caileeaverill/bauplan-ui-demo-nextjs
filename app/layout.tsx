@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { AppSettingsProvider } from "@/context/AppSettingsContext";
+import { ThemeClientWrapper } from "@/components/globals/ThemeClientWrapper";
 import SideNav from "@/components/globals/SideNav/SideNavComponent";
 import TopNav from "@/components/globals/TopNav/TopNav";
 
@@ -31,18 +32,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-zinc-900 to-slate-800`}>
-        <AppSettingsProvider>
-          <div className="flex w-full h-screen">
-            <SideNav />
-            <div className="flex flex-1 flex-col overflow-auto">
-              <TopNav />
-              <div className="flex-1 overflow-auto p-8">
-                {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen dark:from-zinc-900 dark:to-slate-800 dark:bg-gradient-to-br`}>
+        <ThemeClientWrapper>
+          <AppSettingsProvider>
+            <div className="flex w-full h-screen">
+              <SideNav />
+              <div className="flex flex-1 flex-col overflow-auto">
+                <TopNav />
+                <div className="flex-1 overflow-auto p-8">
+                  {children}
+                </div>
               </div>
             </div>
-          </div>
-        </AppSettingsProvider>
+          </AppSettingsProvider>
+        </ThemeClientWrapper>
       </body>
     </html>
   );

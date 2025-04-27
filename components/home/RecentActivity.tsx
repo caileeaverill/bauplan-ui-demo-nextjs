@@ -22,12 +22,12 @@ function RecentActivity() {
     }, []);
 
     return (
-        <section className="rounded-md p-4" aria-label="Recent Activity">
+        <section className="rounded-md py-4 text-black dark:text-white" aria-label="Recent Activity">
             <h2 className="text-3xl font-bold mb-2">Recent Activity</h2>
             <ScrollArea className="h-[400px] rounded-md">
                 <ul>
                     {activities.map((activity, idx) => (
-                        <li key={idx} className="flex items-center my-2 justify-between border-b border-slate-800 pb-3 first:pt-2 last:border-none">
+                        <li key={idx} className="flex items-center my-2 justify-between border-b border-slate-300 dark:border-slate-800 pb-3 first:pt-2 last:border-none">
                             <div className="flex gap-4 items-center text-sm text-zinc-300">
                                 <Avatar>
                                     <AvatarImage src={activity.avatar} />
@@ -40,19 +40,19 @@ function RecentActivity() {
                                     </AvatarFallback>
                                 </Avatar>
                                 <div>
-                                    <span className="font-medium text-white">{activity.user}</span>{" "}
-                                    <span className="text-slate-400">{activity.action}</span>
+                                    <span className="font-medium text-black dark:text-white">{activity.user}</span>{" "}
+                                    <span className="text-slate-600 dark:text-slate-400">{activity.action}</span>
                                 </div>
                             </div>
-                            <div className="min-w-[75px] text-right">
-                                <span className="text-xs text-zinc-300 font-light">{activity.time}</span>
+                            <div className="min-w-[75px] text-right pr-2">
+                                <span className="text-xs  font-light">{activity.time}</span>
                             </div>
                         </li>
                     ))}
                 </ul>
                 {showChevron && (
-                    <div className="pointer-events-none absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-px h-4 bg-slate-800 animate-bounce">
-                        <LucideChevronDown size={20} />
+                    <div className="pointer-events-none absolute -bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                        <LucideChevronDown size={20} className="text-slate-800 dark:text-slate-400" />
                     </div>
                 )}
             </ScrollArea>

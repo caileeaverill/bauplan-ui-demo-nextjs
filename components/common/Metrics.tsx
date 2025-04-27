@@ -26,7 +26,7 @@ export function Metrics({
     label,
     value = 0,
     subtext = '',
-    className = 'text-zinc-300',
+    className = 'text-zinc-400 dark:text-white',
     link = '',
     buttonText = ''
 }: MetricsProps) {
@@ -45,20 +45,20 @@ export function Metrics({
                 <div className={`absolute top-4 right-4 ${className}`} aria-hidden="true">
                     {icon}
                 </div>
-                <h3 className="uppercase text-xs font-normal tracking-wide text-zinc-300">
+                <h3 className="uppercase text-xs font-normal tracking-wide dark:text-zinc-300">
                     {label}
                 </h3>
                 <CardTitle className={`text-2xl font-bold transform transition-all duration-600 ${loaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
                     {value ?? 0}
                 </CardTitle>
                 {subtext && (
-                    <CardDescription className="text-xs text-zinc-300">
+                    <CardDescription className="text-xs dark:text-zinc-300">
                         {subtext}
                     </CardDescription>
                 )}
                 {link && buttonText && (
                     <Link href={link}>
-                        <Button className="w-full transition-all duration-300 bg-transparent border border-zinc-300 text-zinc-300 hover:bg-white hover:cursor-pointer hover:text-slate-800">
+                        <Button className="w-full transition-all duration-300 bg-transparent border border-zinc-300 text-neutral-700 dark:text-zinc-300 hover:cursor-pointer hover:bg-zinc-300 dark:hover:text-slate-800 ">
                             {buttonText}
                         </Button>
                     </Link>
@@ -68,7 +68,7 @@ export function Metrics({
     );
 
     return (
-        <Card className="bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-lg border-slate-800 relative transform transition-all duration-300">
+        <Card className="relative transform transition-all duration-300 border shadow-md dark:border-none dark:bg-gradient-to-br from-slate-700 to-slate-800">
             {cardContent}
         </Card>
     );

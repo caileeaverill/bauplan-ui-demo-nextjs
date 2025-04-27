@@ -15,16 +15,16 @@ function DemoSettingsSheet() {
     return (
         <><Sheet>
             <SheetTrigger asChild>
-                <button className="flex items-center justify-center p-2 rounded-md  transition hover:cursor-pointer hover:bg-zinc-800">
-                    <Settings className="w-5 h-5 text-white" />
+                <button className="flex items-center justify-center p-2 rounded-md  transition hover:cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                    <Settings className="w-5 h-5 text-black dark:text-white" />
                 </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 bg-gradient-to-br from-zinc-900 to-slate-800 border-l-slate-800">
-                <SheetHeader className="px-8 [&>*]:text-white">
+            <SheetContent side="right" className="w-80  dark:bg-gradient-to-br from-zinc-900 to-slate-800 dark:border-l-slate-800">
+                <SheetHeader className="px-8 dark:[&>*]:text-white">
                     <SheetTitle className="text-3xl font-bold mb-2">App Settings</SheetTitle>
                     <p className="text-sm">These settings are to demonstrate functionality and features of the app and are saved into local storage</p>
                 </SheetHeader>
-                <div className="flex flex-col gap-4 px-8 [&>*]:text-white">
+                <div className="flex flex-col gap-4 px-8 dark:[&>*]:text-white">
                     <label className="text-sm font-medium">
                         Set Loading Time in ms (works on home page only)
                     </label>
@@ -41,7 +41,7 @@ function DemoSettingsSheet() {
                     <select
                         value={systemStatus}
                         onChange={(e) => setSystemStatus(e.target.value as "up" | "down" | "disruptions")}
-                        className="bg-zinc-800 text-white rounded-md p-2"
+                        className="border   rounded-md p-2"
                     >
                         <option value="up">Up</option>
                         <option value="down">Down</option>
@@ -54,7 +54,7 @@ function DemoSettingsSheet() {
                                 setLoadingTime(newTime);
                             }
                         }}
-                        className="mt-2 px-4 py-2 bg-blue-900 hover:bg-blue-800 rounded-md text-white transition"
+                        className="mt-2 px-4 py-2 bg-red-600 dark:bg-blue-900 dark:hover:bg-blue-800 rounded-md text-white transition"
                     >
                         Save
                     </button>
