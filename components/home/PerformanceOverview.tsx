@@ -39,13 +39,13 @@ const chartConfig = {
 
 export default function PerformanceOverview() {
     return (
-        <Card className="bg-transparent text-white border-none shadow-none [&>*]:p-0">
+        <Card className="bg-transparent text-white border-none shadow-none [&>*]:p-0 ]">
             <CardHeader>
                 <CardTitle>Performance Overview</CardTitle>
                 <CardDescription className="text-zinc-300">API Calls and Pipeline Executions - Jan to Jun 2024</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <ChartContainer config={chartConfig}>
+            </CardHeader >
+            <CardContent >
+                <ChartContainer className="max-h-[350px] w-full" config={chartConfig}>
                     <LineChart
                         accessibilityLayer
                         data={chartData}
@@ -94,6 +94,6 @@ export default function PerformanceOverview() {
                     </div>
                 </div>
             </CardFooter>
-        </Card>
+        </Card >
     )
 }

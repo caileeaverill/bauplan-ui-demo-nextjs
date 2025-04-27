@@ -16,7 +16,7 @@ function RecentActivity() {
 
         const timer = setTimeout(() => {
             setShowChevron(false);
-        }, 3000);
+        }, 7000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -24,7 +24,7 @@ function RecentActivity() {
     return (
         <div className="rounded-md p-4">
             <h2 className="text-3xl font-bold mb-2">Recent Activity</h2>
-            <ScrollArea className="h-[550px] rounded-md p-4">
+            <ScrollArea className="h-[400px] rounded-md p-4">
                 {activities.map((activity, idx) => (
                     <ul key={idx}>
                         <li className="flex items-center justify-between border-b border-slate-800 pb-3 first:pt-2 last:border-none">

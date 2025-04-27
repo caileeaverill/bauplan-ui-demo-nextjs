@@ -1,10 +1,10 @@
-import HomeDate from "./HomeDate";
-import HomeMetrics from "./HomeMetrics";
-import PerformanceOverview from "./PerformanceOverview";
-import RecentActivity from "./RecentActivity";
-import UserWelcome from "./UserWelcome";
+import HomeDate from "../components/home/HomeDate";
+import HomeMetrics from "../components/home/HomeMetrics";
+import PerformanceOverview from "../components/home/PerformanceOverview";
+import RecentActivity from "../components/home/RecentActivity";
+import UserWelcome from "../components/home/UserWelcome";
 
-function Page() {
+function page() {
   return (
     <div className="grid grid-cols-2 gap-8 text-white">
       <UserWelcome />
@@ -18,4 +18,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default page;
