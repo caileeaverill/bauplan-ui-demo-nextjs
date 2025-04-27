@@ -26,7 +26,7 @@ function DemoSettingsSheet() {
                 </SheetHeader>
                 <div className="flex flex-col gap-4 px-8 [&>*]:text-white">
                     <label className="text-sm font-medium">
-                        Set Loading Time (ms)
+                        Set Loading Time in ms (works on home page only)
                     </label>
                     <Input
                         type="number"
@@ -45,7 +45,7 @@ function DemoSettingsSheet() {
                     >
                         <option value="up">Up</option>
                         <option value="down">Down</option>
-                        <option value="disruptions">Issues Reported</option>
+                        <option value="disruptions">Disruptions Reported</option>
                     </select>
                     <button
                         onClick={() => {
