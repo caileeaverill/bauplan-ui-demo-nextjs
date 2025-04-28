@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { fakeUser } from "@/lib/fakeUser";
 
 export function UserAvatar() {
     const [mounted, setMounted] = useState(false);
@@ -16,7 +15,7 @@ export function UserAvatar() {
 
     return (
         <img
-            src={fakeUser.avatar}
+            src={undefined}
             alt="User Avatar"
             className="w-10 h-10 rounded-full object-cover hover:ring-2 hover:ring-primary hover:ring-offset-2 transition hover:cursor-pointer"
         />

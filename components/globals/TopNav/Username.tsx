@@ -1,6 +1,5 @@
 'use client'
 
-import { fakeUser } from "@/lib/fakeUser";
 import { useEffect, useState } from "react";
 
 export function UserName() {
@@ -16,7 +15,7 @@ export function UserName() {
 
     return (
         <span className="text-sm darktext-zinc-100 font-medium">
-            {fakeUser.firstName} {fakeUser.lastName}
+            { }
         </span>
     );
 }

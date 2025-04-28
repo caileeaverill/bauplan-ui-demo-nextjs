@@ -29,6 +29,8 @@ export default function SideNav() {
                                 alt="logo"
                                 width={32}
                                 height={32}
+                                priority
+                                style={{ height: "auto", width: "auto" }}
                                 className="transition-transform duration-700 group-hover:rotate-[360deg]"
                             />
                             <span className={`text-white transition-opacity duration-600 font-semibold ${collapsed ? "opacity-0" : "opacity-100"}`}>
