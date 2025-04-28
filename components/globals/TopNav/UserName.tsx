@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-export function UserName() {
+type UserNameProps = {
+    name: string;
+};
+
+export function UserName({ name }: UserNameProps) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -14,8 +18,8 @@ export function UserName() {
     }
 
     return (
-        <span className="text-sm darktext-zinc-100 font-medium">
-            { }
+        <span className="text-sm text-zinc-900 dark:text-zinc-100 font-medium">
+            {name}
         </span>
     );
 }

@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { AppSettingsProvider } from "@/context/AppSettingsContext";
-import { ThemeClientWrapper } from "@/components/globals/ThemeClientWrapper";
+import { UserProvider } from "@/context/UserContext";
 import SideNav from "@/components/globals/SideNav/SideNavComponent";
 import TopNav from "@/components/globals/TopNav/TopNav";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen dark:from-zinc-900 dark:to-slate-800 dark:bg-gradient-to-br`}>
-        <ThemeClientWrapper>
+        <UserProvider>
           <AppSettingsProvider>
             <div className="flex w-full h-screen">
               <SideNav />
@@ -45,7 +46,7 @@ export default function RootLayout({
               </div>
             </div>
           </AppSettingsProvider>
-        </ThemeClientWrapper>
+        </UserProvider>
       </body>
     </html>
   );

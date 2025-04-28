@@ -1,15 +1,16 @@
 'use client'
-import { UserName } from "./Username";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { useUser } from "@/context/UserContext";
 import DemoSettingsSheet from "../DemoSettingsSheet";
 import { useEffect, useState } from "react";
 import { setDarkMode, setLightMode } from "@/lib/theme";
-import { UserAvatar } from "./Useravatar";
 import { Sun, Moon } from "lucide-react";
+import { UserAvatar } from "./UserAvatar";
+import { UserName } from "./UserName";
 
 
 export default function TopNav() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const user = useUser();
 
     useEffect(() => {
         setIsDarkMode(document.documentElement.classList.contains('dark'));
@@ -34,20 +35,15 @@ export default function TopNav() {
 
             {/* Right Section */}
             <div className="flex items-center gap-4">
-                <UserName />
-                <DropdownMenu>
-                    <DropdownMenuTrigger>
-                        <UserAvatar />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuItem>Profile</DropdownMenuItem>
-                        <DropdownMenuItem>Settings</DropdownMenuItem>
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                {user && (
+                    <div className="flex items-center gap-2">
+                        <UserName name={user.name} />
+                        <UserAvatar src={user.avatar} />
+                    </div>
+                )}
                 <button
                     onClick={toggleTheme}
-                    className="darK:text-black hover:text-primary transition relative w-6 h-6"
+                    className="dark:text-black hover:text-primary transition relative w-6 h-6"
                     aria-label="Toggle Theme"
                 >
                     <Sun
