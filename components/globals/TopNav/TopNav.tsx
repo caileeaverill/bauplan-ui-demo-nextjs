@@ -43,7 +43,7 @@ export default function TopNav() {
                 )}
                 <button
                     onClick={toggleTheme}
-                    className="dark:text-black hover:text-primary transition relative w-6 h-6"
+                    className="text-black dark:text-white hover:text-primary transition relative w-6 h-6"
                     aria-label="Toggle Theme"
                 >
                     <Sun
